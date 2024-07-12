@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --text: hsla(0,0%,100%,.88);
+  --darkpink: lab(80.998 32.353 -7.037);
+  --lightpink: lab(62.983 59.31 -1.493);
+  --bg: #282c35;
+  --bg-secondary: #363c48;
+  --header: #1c1f25;
+  --textNormal: hsla(0, 0%, 100%, 0.88);
+  --textTitle: #fff;
+  --textLink: var(--darkpink);
+  --nav-link: var(--darkpink);
+  --hr: hsla(0, 0%, 100%, 0.2);
+  --inlineCode-bg: rgba(115, 124, 153, 0.2);
+  --inlineCode-text: #e6e6e6;
+  --pink: lab(81 32.36 -7.02);
+  --purple: lab(78 19.97 -36.75);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--textNormal);
+  font-family: 'Merriweather', 'Georgia', serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  font-kerning: normal;
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  line-height: 1.5;
+}
+
+
+input,
+textarea {
+  color: var(--text);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Merriweather', serif;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  background-color: var(--bg-button) !important;
+  color: #fff
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 42rem;
+  padding: 2.625rem 1.3125rem;
+}
+
+a {
+  color: var(--textLink)
+}
+
+p {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.75rem;
+}
+
+h1 {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.75rem;
+  color: inherit;
+  font-family: Montserrat, sans-serif;
+  font-weight: 900;
+  text-rendering: optimizeLegibility;
+  font-size: 2.5rem;
+  line-height: 1.1;
+}
+
+h3 {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.75rem;
+  color: inherit;
+  font-family: 'Merriweather', 'Georgia', serif;
+  font-weight: 900;
+  text-rendering: optimizeLegibility;
+  font-size: 1.4427rem;
+  line-height: 1.1;
+}
+
+.react-toggle {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.react-toggle-track {
+  width: 50px;
+  height: 24px;
+  padding: 0;
+  border-radius: 30px;
+  background-color: #0f1114;
+  transition: all .2s ease;
+}
+
+.react-toggle--checked .react-toggle-track-check,
+.react-toggle-track-x {
+  opacity: 1;
+  transition: opacity .25s ease;
+}
+
+.react-toggle-track-check {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  left: 5px;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 0;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.react-toggle--checked .react-toggle-track-x {
+  opacity: 0;
+}
+
+.react-toggle-track-x {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  right: 5px;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 0;
+}
+
+.react-toggle--checked .react-toggle-track-check,
+.react-toggle-track-x {
+  opacity: 1;
+  transition: opacity .25s ease;
+}
+
+.react-toggle-thumb {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #fafafa;
+  box-sizing: border-box;
+  transition: all .5s cubic-bezier(.23, 1, .32, 1) 0ms;
+  transform: translateX(0);
+}
+
+.react-toggle:active .react-toggle-thumb {
+  box-shadow: 0 0 5px 5px #ffa7c4;
+}
+
+.react-toggle--checked .react-toggle-thumb {
+  transform: translateX(26px);
+  border-color: #19ab27;
+}
+
+.react-toggle-screenreader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.nav-bg {
+  background-color: var(--header);
+}
+
+.nav-bg a {
+  font-size: 1.1rem;
+  color: var(--nav-link);
+}
+
+.form-bg {
+  background-color: var(--bg-secondary);
+}
+
+.logo-wrapper {
+  opacity: 1;
+  transition: transform 0.2s ease-in-out 0s, opacity 0.2s linear 0.4s;
+}
+
+.logo {
+  --myColor1: var(--text);
+  --myColor2: var(--text);
+  background-image: linear-gradient(45deg, var(--myColor1), var(--myColor2));
+  background-clip: text;
+  color: transparent;
+  transition: --myColor1 0.2s ease-out 0s, --myColor2 0.2s ease-in-out 0s;
+}
+
+.logo-post {
+  --myColor1: var(--pink);
+  --myColor2: var(--purple);
+  background-image: linear-gradient(45deg, var(--myColor1), var(--myColor2));
+  background-clip: text;
+  color: transparent;
+  transition: --myColor1 0.2s ease-out 0s, --myColor2 0.2s ease-in-out 0s;
+}
+
+ul li {
+  list-style: none;
+}
